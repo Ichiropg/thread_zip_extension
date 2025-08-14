@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Thread to ZIP",
+  "version": "1.0",
+  "description": "CDN不要・まとめZIP自動生成版拡張機能（Alt+Zまたはアイコンクリックで保存）",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "jszip.min.js",
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "スレッドをZIP保存"
+  }
+}
